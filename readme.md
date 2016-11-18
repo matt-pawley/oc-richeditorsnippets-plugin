@@ -1,8 +1,9 @@
-# Snippets Anywhere
+# October Richeditor Snippets
 
 - [Introduction](#introduction)
 - [Example usage for Rainlab Syntax Fields](#syntaxFields)
 - [Example usage for Rainlab Pages Content Blocks](#contentBlocks)
+- [Example usage in fields.yaml](#fields)
 
 <a name="introduction"></a>
 ## Introduction
@@ -36,4 +37,16 @@ Option 2 (wrap in filter)
 {% filter parseSnippets %}
     {% content 'company-details.htm' %}
 {% endfilter %}
+```
+
+<a name="fields"></a>
+## Example usage in fields.yaml
+
+If you do not set `toolbarButtons` you will not need to add `snippets` to the list. Please see example below when customization is required.
+
+```
+html_content:
+    type: richeditor
+    toolbarButtons: bold|italic|snippets
+    size: huge
 ```
