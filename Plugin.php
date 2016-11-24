@@ -12,7 +12,11 @@ use RainLab\Pages\Controllers\Index as StaticPage;
  * RicheditorSnippets Plugin Information File
  */
 class Plugin extends PluginBase
-{
+{  
+    /**
+     * @var array Plugin dependencies
+     */
+    public $require = ['RainLab.Pages'];
 
     /**
      * Returns information about this plugin.
