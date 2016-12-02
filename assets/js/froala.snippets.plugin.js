@@ -16,18 +16,16 @@
         icon: '<i class="icon-newspaper-o"></i>',
 
         // The dropdown HTML
-        html : function(){
-            if ($.oc.snippets)
-            {
+        html: function() {
+            if ($.oc.snippets) {
                 var html = '<ul class="fr-dropdown-list">';
                 $.each($.oc.snippets, function(i, snippet) {
                     html += '<li><a class="fr-command" data-cmd="snippets" data-param1="' + snippet.snippet + '" title="' + snippet.name + '">' + snippet.name + '</a></li>';
                 });
 
-                return html;
+                return html + '</ul>';
             }
-            else
-            {
+            else {
                 return '<div style="padding:10px;">No snippets are currently defined.</div>';
             }
         },
@@ -45,8 +43,7 @@
         callback: function (cmd, val, params) {
             var options = $.oc.snippets[val];
 
-            if (options)
-            {
+            if (options) {
                 var $editor = this.$el.parents('[data-control="richeditor"]'),
                     $snippetNode = $('<figure contenteditable="false" data-inspector-css-class="hero">&nbsp;</figure>');
 
@@ -90,7 +87,6 @@
         }
     });
 
-
     generateUniqueComponentSnippetCode = function(componentClass, originalCode, $pageForm) {
         var updatedCode = originalCode,
             counter = 1,
@@ -99,7 +95,7 @@
         do {
             snippetFound = false
 
-            $('[data-control="richeditor"] textarea', $pageForm).each(function(){
+            $('[data-control="richeditor"] textarea', $pageForm).each(function() {
                 var $textarea = $(this),
                     $codeDom = $('<div>' + $textarea.val() + '</div>')
 
@@ -120,11 +116,10 @@
 
 })(jQuery);
 
-$(window).on('load', function(){
+$(window).on('load', function() {
     var $editor = $('[data-control="richeditor"]');
 
-    if ($.oc.pagesPage && !window.location.pathname.includes('rainlab/pages'))
-    {
+    if ($.oc.pagesPage && !window.location.pathname.includes('rainlab/pages')) {
         $.oc.pagesPage.snippetManager.initSnippets($editor);
     }
 });

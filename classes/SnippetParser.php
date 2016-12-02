@@ -11,8 +11,8 @@ use RainLab\Pages\Classes\SnippetManager;
 use Cms\Classes\Controller as CmsController;
 use Cms\Classes\Theme;
 
-class SnippetParser {
-
+class SnippetParser
+{
     public static function parse($markup)
     {
         $map = self::extractSnippetsFromMarkup($markup);
@@ -41,7 +41,6 @@ class SnippetParser {
         }
 
         return $markup;
-
     }
 
     protected static function extractSnippetsFromMarkup($markup)

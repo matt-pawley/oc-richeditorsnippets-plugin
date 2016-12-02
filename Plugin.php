@@ -12,7 +12,7 @@ use RainLab\Pages\Controllers\Index as StaticPage;
  * RicheditorSnippets Plugin Information File
  */
 class Plugin extends PluginBase
-{  
+{
     /**
      * @var array Plugin dependencies
      */
@@ -27,20 +27,11 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'Richeditor Snippets',
-            'description' => 'Adds button to Richeditor toolbar to quickly add Snippets',
+            'description' => 'Adds button to Richeditor toolbar to quickly add Snippets.',
             'author'      => 'Tough Developer',
-            'icon'        => 'icon-newspaper-o"'
+            'icon'        => 'icon-newspaper-o',
+            'homepage'    => 'https://github.com/toughdeveloper/oc-richeditorsnippets-plugin'
         ];
-    }
-
-    /**
-     * Register method, called when the plugin is first registered.
-     *
-     * @return void
-     */
-    public function register()
-    {
-
     }
 
     /**
@@ -51,7 +42,7 @@ class Plugin extends PluginBase
     public function boot()
     {
         // Extend controllers to always have Static Page methods
-        Controller::extend(function($widget){
+        Controller::extend(function($widget) {
             $widget->addDynamicMethod('onGetInspectorConfiguration', function() {
                 return (new StaticPage)->onGetInspectorConfiguration();
             });
@@ -71,8 +62,6 @@ class Plugin extends PluginBase
             $widget->addJs('/toughdeveloper/snippets/list.js');
             $widget->addJs('/plugins/toughdeveloper/richeditorsnippets/assets/js/froala.snippets.plugin.js');
         });
-
-
     }
 
     public function registerMarkupTags()
@@ -85,5 +74,4 @@ class Plugin extends PluginBase
             ]
         ];
     }
-
 }
