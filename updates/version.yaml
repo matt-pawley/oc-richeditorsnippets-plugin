@@ -1,2 +1,3 @@
 1.0.1: First version of Richeditor Snippets
 1.0.2: Defines Rainlab.Pages as a plugin dependency - Thanks to Alexander Guth
+1.0.3: Fixes error 'onInspectableGetOptions not found' on more complex snippets

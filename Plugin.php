@@ -12,7 +12,7 @@ use RainLab\Pages\Controllers\Index as StaticPage;
  * RicheditorSnippets Plugin Information File
  */
 class Plugin extends PluginBase
-{  
+{
     /**
      * @var array Plugin dependencies
      */
@@ -58,6 +58,10 @@ class Plugin extends PluginBase
 
             $widget->addDynamicMethod('onGetSnippetNames', function() {
                 return (new StaticPage)->onGetSnippetNames();
+            });
+
+            $widget->addDynamicMethod('onInspectableGetOptions', function() {
+                return (new StaticPage)->onInspectableGetOptions();
             });
         });
 
