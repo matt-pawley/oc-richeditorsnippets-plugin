@@ -33,6 +33,13 @@ class SnippetParser
                 $generatedMarkup = $controller->renderPartial($partialName, $snippetInfo['properties']);
             }
             else {
+                // If the component was not included in the layout, load it dynamically.
+                // It is required to manually call the onRun method because the CMS is supposed to have ran it when loading the layout.
+                if (!$controller->findComponentByName($snippetCode)) {
+                    $component = $controller->addComponent($snippetInfo['component'], $snippetCode, $snippetInfo['properties'], true);
+                    $component->onRun();
+                }
+                
                 $generatedMarkup = $controller->renderComponent($snippetCode);
             }
 
