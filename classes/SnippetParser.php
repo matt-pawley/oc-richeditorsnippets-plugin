@@ -33,7 +33,7 @@ class SnippetParser
                 $generatedMarkup = $controller->renderPartial($partialName, $snippetInfo['properties']);
             }
             else {
-                $generatedMarkup = $controller->renderComponent($snippetCode);
+                $generatedMarkup = $controller->renderComponent($snippetCode, $snippetInfo['properties']);
             }
 
             $pattern = preg_quote($snippetDeclaration);
