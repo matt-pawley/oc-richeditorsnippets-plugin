@@ -1,3 +1,8 @@
+# This project is no longer actively mainteted
+
+Please use the fork maintained by inetis.ch - https://github.com/inetis-ch/oc-richeditorsnippets-plugin
+
+
 # October Richeditor Snippets
 
 - [Introduction](#introduction)
