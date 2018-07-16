@@ -27,4 +27,4 @@ Route::get('/toughdeveloper/snippets/list.js', function()
         ->keyBy('snippet');
 
     return '$.oc.snippets = ' . $snippets;
-});
+})->middleware('web');
