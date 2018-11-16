@@ -26,5 +26,5 @@ Route::get('/toughdeveloper/snippets/list.js', function()
         })
         ->keyBy('snippet');
 
-    return '$.oc.snippets = ' . $snippets;
+    return Response::make('$.oc.snippets = '.$snippets)->header('Content-Type', 'text/javascript');
 });
